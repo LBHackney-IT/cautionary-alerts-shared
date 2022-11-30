@@ -1,8 +1,8 @@
 version: "3.2"
 
 services:
-  hackney-shared-activity-history-test:
-    image: hackney-shared-activity-history-test
+  hackney-shared-cautionary-alerts-test:
+    image: hackney-shared-cautionary-alerts-test
     build:
       context: .
       dockerfile: Hackney.Shared.CautionaryAlerts.Tests/Dockerfile
