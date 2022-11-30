@@ -1,0 +1,10 @@
+version: "3.2"
+
+services:
+  hackney-shared-activity-history-test:
+    image: hackney-shared-activity-history-test
+    build:
+      context: .
+      dockerfile: Hackney.Shared.CautionaryAlerts.Tests/Dockerfile
+      args:
+        - LBHPACKAGESTOKEN=${LBHPACKAGESTOKEN}
