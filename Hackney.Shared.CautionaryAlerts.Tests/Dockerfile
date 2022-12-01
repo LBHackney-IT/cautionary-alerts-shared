@@ -11,7 +11,7 @@ WORKDIR /app
 COPY ./Hackney.Shared.CautionaryAlerts.sln ./
 COPY ./Hackney.Shared.CautionaryAlerts/Hackney.Shared.CautionaryAlerts.csproj ./Hackney.Shared.CautionaryAlerts/
 COPY ./Hackney.Shared.CautionaryAlerts.Tests/Hackney.Shared.CautionaryAlerts.Tests.csproj ./Hackney.Shared.CautionaryAlerts.Tests/
-COPY /nuget.config /root/.nuget/NuGet/NuGet.Config
+COPY /NuGet.Config /root/.nuget/NuGet/NuGet.Config
 
 RUN dotnet restore ./Hackney.Shared.CautionaryAlerts/Hackney.Shared.CautionaryAlerts.csproj
 RUN dotnet restore ./Hackney.Shared.CautionaryAlerts.Tests/Hackney.Shared.CautionaryAlerts.Tests.csproj
