@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Hackney.Shared.CautionaryAlerts.Domain;
 
 namespace Hackney.Shared.CautionaryAlerts.Boundary.Response
 {

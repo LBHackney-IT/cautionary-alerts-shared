@@ -1,7 +1,4 @@
-using Hackney.Shared.CautionaryAlerts.Boundary.Response;
-using System;
-
-namespace Hackney.Shared.CautionaryAlerts.Gateways
+namespace Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets
 {
     public class CautionaryAlertListItem
     {

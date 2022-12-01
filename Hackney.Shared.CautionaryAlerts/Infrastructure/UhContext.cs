@@ -1,8 +1,4 @@
-using System.Threading.Tasks;
-using System.Threading;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System;
 
 namespace Hackney.Shared.CautionaryAlerts.Infrastructure
 {

@@ -1,7 +1,6 @@
 using Hackney.Shared.CautionaryAlerts.Infrastructure;
 using FluentValidation;
 using Hackney.Core.Validation;
-using Microsoft.AspNetCore.Http;
 using System;
 
 namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation

@@ -1,4 +1,4 @@
-namespace Hackney.Shared.CautionaryAlerts.Gateways
+namespace Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets
 {
     public class PropertyAlert
     {
