@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
  <PropertyGroup>
    <TargetFramework>netstandard2.1</TargetFramework>
+   <PackageId>Hackney.Shared.CautionaryAlerts</PackageId>
    <RepositoryUrl>https://github.com/LBHackney-IT/cautionary-alerts-shared</RepositoryUrl>
    <Authors>London Borough of Hackney</Authors>
    <Company>London Borough of Hackney</Company>
