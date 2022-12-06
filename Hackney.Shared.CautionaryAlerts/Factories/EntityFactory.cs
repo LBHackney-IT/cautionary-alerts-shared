@@ -1,8 +1,7 @@
 using Hackney.Shared.CautionaryAlerts.Boundary.Request;
-using Hackney.Shared.CautionaryAlerts.Boundary.Response;
 using Hackney.Shared.CautionaryAlerts.Domain;
-using Hackney.Shared.CautionaryAlerts.Gateways;
 using Hackney.Shared.CautionaryAlerts.Infrastructure;
+using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;

@@ -5,7 +5,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System.Linq;
 using System;
-using Hackney.Shared.CautionaryAlerts.Gateways;
+using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
 
 namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
 {

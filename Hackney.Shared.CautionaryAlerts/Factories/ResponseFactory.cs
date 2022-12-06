@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Hackney.Shared.CautionaryAlerts.Boundary.Response;
 using Hackney.Shared.CautionaryAlerts.Domain;
-using Hackney.Shared.CautionaryAlerts.Gateways;
+using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
 
 namespace Hackney.Shared.CautionaryAlerts.Factories
 {
