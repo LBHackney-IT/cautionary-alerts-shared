@@ -76,7 +76,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 StartDate = domain.DateOfIncident,
                 AlertCode = domain.Code,
                 Description = domain.CautionOnSystem,
-                Reason = domain.Reason, 
+                Reason = domain.Reason,
                 AssureReference = domain.AssureReference,
                 PersonId = Guid.Parse(domain.PersonId),
                 PersonName = domain.Name
