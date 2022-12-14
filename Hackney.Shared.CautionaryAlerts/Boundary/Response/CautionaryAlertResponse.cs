@@ -1,3 +1,5 @@
+using System;
+
 namespace Hackney.Shared.CautionaryAlerts.Boundary.Response
 {
     public class CautionaryAlertResponse
@@ -38,5 +40,8 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Response
         /// Detailed description or reason behind the cautionary alert
         /// </summary>
         public string Reason { get; set; }
+        public string AssureReference { get; set; }
+        public string PersonName { get; set; }
+        public Guid PersonId { get; set; }
     }
 }

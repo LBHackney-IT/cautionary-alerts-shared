@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Hackney.Shared.CautionaryAlerts.Boundary.Response
@@ -8,6 +9,6 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Response
         public string UPRN { get; set; }
         public string AddressNumber { get; set; }
         public List<CautionaryAlertResponse> Alerts { get; set; }
-        public string AssureReference { get; set; }
+
     }
 }

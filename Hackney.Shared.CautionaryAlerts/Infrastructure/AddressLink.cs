@@ -30,5 +30,6 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         [Column("modType")]
         [Required]
         public char ModifyType { get; set; }
+
     }
 }

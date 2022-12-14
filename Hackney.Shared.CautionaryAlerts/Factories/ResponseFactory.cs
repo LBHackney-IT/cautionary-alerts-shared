@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Hackney.Shared.CautionaryAlerts.Boundary.Response;
@@ -17,7 +18,10 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 DateModified = domain.DateModified.ToString("yyyy-MM-dd"),
                 EndDate = domain.EndDate?.ToString("yyyy-MM-dd"),
                 ModifiedBy = domain.ModifiedBy,
-                StartDate = domain.StartDate?.ToString("yyyy-MM-dd")
+                StartDate = domain.StartDate?.ToString("yyyy-MM-dd"),
+                AssureReference = domain.AssureReference,
+                PersonName = domain.PersonName,
+                PersonId = domain.PersonId
             };
         }
 
@@ -50,7 +54,6 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 PropertyReference = domain.PropertyReference,
                 UPRN = domain.UPRN,
                 Alerts = domain.Alerts.ToResponse(),
-                AssureReference = domain.AssureReference
             };
         }
 
@@ -73,7 +76,10 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 StartDate = domain.DateOfIncident,
                 AlertCode = domain.Code,
                 Description = domain.CautionOnSystem,
-                Reason = domain.Reason
+                Reason = domain.Reason,
+                AssureReference = domain.AssureReference,
+                PersonId = Guid.Parse(domain.PersonId),
+                PersonName = domain.Name
             };
         }
 
