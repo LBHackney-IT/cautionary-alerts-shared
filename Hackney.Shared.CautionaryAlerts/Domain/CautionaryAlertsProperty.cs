@@ -10,7 +10,5 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
         public string AddressNumber { get; set; }
         public List<CautionaryAlert> Alerts { get; set; }
         public string AssureReference { get; set; }
-        public string PersonName { get; set; }
-        public Guid PersonId { get; set; }
     }
 }

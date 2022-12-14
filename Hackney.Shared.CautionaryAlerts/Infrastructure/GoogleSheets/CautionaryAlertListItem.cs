@@ -1,3 +1,5 @@
+using System;
+
 namespace Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets
 {
     public class CautionaryAlertListItem
@@ -20,5 +22,6 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets
         public string IncidentBeforeCurrentTenancyDate { get; set; }
         public string Reason { get; set; }
         public string AssureReference { get; set; }
+        public string PersonId { get; set; }
     }
 }

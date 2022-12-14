@@ -31,16 +31,5 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         [Required]
         public char ModifyType { get; set; }
 
-        [Column("person_name")]
-        [MaxLength(100)]
-        public string PersonName { get; set; }
-
-        [Column("person_id")]
-        [MaxLength(36)]
-        public string PersonId { get; set; }
-
-        [Column("assure_reference")]
-        [MaxLength(12)]
-        public string AssureReference { get; set; }
     }
 }

@@ -43,5 +43,6 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         [DefaultValue('I')]
         [Required]
         public char ModifyType { get; set; }
+
     }
 }
