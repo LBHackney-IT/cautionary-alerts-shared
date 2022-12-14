@@ -53,6 +53,9 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.AddressNumber.Should().Be(domain.AddressNumber);
             response.PropertyReference.Should().Be(domain.PropertyReference);
             response.UPRN.Should().Be(domain.UPRN);
+            response.PersonName.Should().Be(domain.PersonName);
+            response.PersonId.Should().Be(domain.PersonId);
+            response.AssureReference.Should().Be(domain.AssureReference);
         }
     }
 }

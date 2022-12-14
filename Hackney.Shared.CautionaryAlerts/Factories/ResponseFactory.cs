@@ -50,7 +50,9 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 PropertyReference = domain.PropertyReference,
                 UPRN = domain.UPRN,
                 Alerts = domain.Alerts.ToResponse(),
-                AssureReference = domain.AssureReference
+                AssureReference = domain.AssureReference,
+                PersonId = domain.PersonId,
+                PersonName = domain.PersonName
             };
         }
 
