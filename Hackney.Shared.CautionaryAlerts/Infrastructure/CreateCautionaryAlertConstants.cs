@@ -4,7 +4,7 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
     {
         public const int ALERTCODELENGTH = 5;
         public const int ALERTDESCRIPTION = 50;
-        public const int FULLADDRESSLENGTH = 50;
+        public const int FULLADDRESSLENGTH = 255;
         public const int PROPERTYREFERENCELENGTH = 12;
         public const int UPRNLENGTH = 12;
         public const int PERSONNAMELENGTH = 100;
