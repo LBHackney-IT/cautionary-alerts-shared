@@ -15,7 +15,7 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         public string DoorNumber { get; set; }
 
         [Column("address")]
-        [MaxLength(50)]
+        [MaxLength(255)]
         public string Address { get; set; }
 
         [Column("neighbourhood")]
