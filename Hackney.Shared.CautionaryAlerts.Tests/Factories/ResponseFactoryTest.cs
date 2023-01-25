@@ -4,6 +4,7 @@ using Hackney.Shared.CautionaryAlerts.Domain;
 using Hackney.Shared.CautionaryAlerts.Factories;
 using FluentAssertions;
 using NUnit.Framework;
+using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
 
 namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
 {
@@ -54,5 +55,58 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.PropertyReference.Should().Be(domain.PropertyReference);
             response.UPRN.Should().Be(domain.UPRN);
         }
+
+        [Test]
+        public void CanSendThroughNullPersonId()
+        {
+            var fixture = new Fixture();
+            var domain = fixture.Build<CautionaryAlertListItem>()
+                                .Without(x => x.PersonId)
+                                .Create();
+            var response = domain.ToResponse();
+            response.PersonId.Should().BeNull();
+
+        }
+
+        [Test]
+        public void CanParseGuidPersonId()
+        {
+            var fixture = new Fixture();
+            var personId = Guid.NewGuid();
+            var domain = fixture.Build<CautionaryAlertListItem>()
+                                .With(x => x.PersonId, personId.ToString())
+                                .Create();
+            var response = domain.ToResponse();
+            response.PersonId.Should().Be(personId);
+
+        }
+
+        [Test]
+        public void PersonIdNullIfEmptyGuid()
+        {
+            var fixture = new Fixture();
+            var personId = Guid.Empty;
+            var domain = fixture.Build<CautionaryAlertListItem>()
+                                .With(x => x.PersonId, personId.ToString())
+                                .Create();
+            var response = domain.ToResponse();
+            response.PersonId.Should().BeNull();
+
+        }
+
+        [Test]
+        public void PersonIdNullIfRandomString()
+        {
+            var fixture = new Fixture();
+            var personId = "test";
+            var domain = fixture.Build<CautionaryAlertListItem>()
+                                .With(x => x.PersonId, personId)
+                                .Create();
+            var response = domain.ToResponse();
+            response.PersonId.Should().BeNull();
+
+        }
+
+
     }
 }
