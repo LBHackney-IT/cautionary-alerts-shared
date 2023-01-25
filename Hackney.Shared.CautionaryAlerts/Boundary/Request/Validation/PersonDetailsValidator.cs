@@ -9,8 +9,6 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
     {
         public PersonDetailsValidator()
         {
-            RuleFor(x => x.Id).NotNull()
-                .NotEqual(Guid.Empty);
 
             RuleFor(x => x.Name).NotNull()
                 .NotEmpty()
