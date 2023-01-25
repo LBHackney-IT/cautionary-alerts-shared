@@ -82,7 +82,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
         }
 
         [Test]
-        public void PersonIdNullIfEnmptyGuid()
+        public void PersonIdNullIfEmptyGuid()
         {
             var fixture = new Fixture();
             var personId = Guid.Empty;
@@ -93,5 +93,20 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.PersonId.Should().BeNull();
 
         }
+
+        [Test]
+        public void PersonIdNullIfRandomString()
+        {
+            var fixture = new Fixture();
+            var personId = "test";
+            var domain = fixture.Build<CautionaryAlertListItem>()
+                                .With(x => x.PersonId, personId)
+                                .Create();
+            var response = domain.ToResponse();
+            response.PersonId.Should().BeNull();
+
+        }
+
+
     }
 }
