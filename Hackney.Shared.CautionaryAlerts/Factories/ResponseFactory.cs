@@ -78,14 +78,14 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Description = domain.CautionOnSystem,
                 Reason = domain.Reason,
                 AssureReference = domain.AssureReference,
-                PersonId = CheckIfExists(domain.PersonId),
+                PersonId = ParseGuidIfExists(domain.PersonId),
                 PersonName = domain.Name
             };
         }
 
-        private static Guid? CheckIfExists(string personId)
+        private static Guid? ParseGuidIfExists(string personId)
         {
-            if (personId == null)
+            if (personId == null || personId == Guid.Empty.ToString())
                 return null;
             return Guid.Parse(personId);
         }
