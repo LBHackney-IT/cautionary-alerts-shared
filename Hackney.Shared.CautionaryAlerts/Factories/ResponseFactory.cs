@@ -85,16 +85,14 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
 
         private static Guid? ParseGuidIfExists(string personId)
         {
-
             Guid validGuid;
-            if (personId == Guid.Empty.ToString())
+            if (personId == Guid.Empty.ToString() || string.IsNullOrEmpty(personId))
                 return null;
 
             if (Guid.TryParse(personId, out validGuid))
                 return validGuid;
 
             return null;
-
         }
 
         public static CautionaryAlertListItem ToResponse(this PropertyAlertDomain domain)
