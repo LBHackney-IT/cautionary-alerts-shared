@@ -78,9 +78,16 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Description = domain.CautionOnSystem,
                 Reason = domain.Reason,
                 AssureReference = domain.AssureReference,
-                PersonId = Guid.Parse(domain.PersonId),
+                PersonId = ParseGuidIfExists(domain.PersonId),
                 PersonName = domain.Name
             };
+        }
+
+        private static Guid? ParseGuidIfExists(string personId)
+        {
+            if (personId == null || personId == Guid.Empty.ToString())
+                return null;
+            return Guid.Parse(personId);
         }
 
         public static CautionaryAlertListItem ToResponse(this PropertyAlertDomain domain)
