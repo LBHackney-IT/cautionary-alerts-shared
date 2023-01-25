@@ -74,7 +74,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var fixture = new Fixture();
             var personId = Guid.NewGuid();
             var domain = fixture.Build<CautionaryAlertListItem>()
-                                .With(x=> x.PersonId, personId.ToString())
+                                .With(x => x.PersonId, personId.ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().Be(personId);

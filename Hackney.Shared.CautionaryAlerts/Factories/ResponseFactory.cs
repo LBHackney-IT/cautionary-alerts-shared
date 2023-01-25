@@ -85,9 +85,9 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
 
         private static Guid? ParseGuidIfExists(string personId)
         {
-            
+
             Guid validGuid;
-            if(personId == Guid.Empty.ToString())
+            if (personId == Guid.Empty.ToString())
                 return null;
 
             if (Guid.TryParse(personId, out validGuid))
