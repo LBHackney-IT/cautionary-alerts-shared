@@ -3,7 +3,7 @@ using Hackney.Shared.CautionaryAlerts.Boundary.Request;
 using Hackney.Shared.CautionaryAlerts.Infrastructure;
 using System;
 
-namespace CautionaryAlertsApi.Tests
+namespace Hackney.Shared.CautionaryAlerts.Tests
 {
     public static class CreateCautionaryAlertFixture
     {
