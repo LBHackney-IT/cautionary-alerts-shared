@@ -23,6 +23,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.DateModified.Should().Be(DateTimeToDateString(domain.DateModified));
             response.EndDate.Should().Be(DateTimeToDateString(domain.EndDate.Value));
             response.StartDate.Should().Be(DateTimeToDateString(domain.StartDate.Value));
+            response.IsActive.Should().Be(domain.IsActive);
         }
 
         [Test]

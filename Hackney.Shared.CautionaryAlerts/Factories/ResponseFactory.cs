@@ -21,7 +21,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 StartDate = domain.StartDate?.ToString("yyyy-MM-dd"),
                 AssureReference = domain.AssureReference,
                 PersonName = domain.PersonName,
-                PersonId = domain.PersonId
+                PersonId = domain.PersonId,
+                IsActive = domain.IsActive
             };
         }
 
