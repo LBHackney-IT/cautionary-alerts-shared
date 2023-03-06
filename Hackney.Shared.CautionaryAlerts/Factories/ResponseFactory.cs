@@ -23,7 +23,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 PersonName = domain.PersonName,
                 PersonId = domain.PersonId,
                 IsActive = domain.IsActive,
-                AlertId= domain.AlertId
+                AlertId = domain.AlertId
             };
         }
 
