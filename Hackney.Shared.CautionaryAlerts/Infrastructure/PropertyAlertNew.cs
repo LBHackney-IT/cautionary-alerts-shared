@@ -60,5 +60,9 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
 
         [Column("is_active")]
         public bool IsActive { get; set; }
+
+        [Column("alert_id")]
+        [MaxLength(36)]
+        public string AlertId { get; set; }
     }
 }

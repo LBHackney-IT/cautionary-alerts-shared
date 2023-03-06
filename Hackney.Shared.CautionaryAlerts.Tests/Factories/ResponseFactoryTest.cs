@@ -24,6 +24,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.EndDate.Should().Be(DateTimeToDateString(domain.EndDate.Value));
             response.StartDate.Should().Be(DateTimeToDateString(domain.StartDate.Value));
             response.IsActive.Should().Be(domain.IsActive);
+            response.AlertId.Should().Be(domain.AlertId);
         }
 
         [Test]
