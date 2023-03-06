@@ -59,7 +59,6 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         public string AssureReference { get; set; }
 
         [Column("is_active")]
-        [MaxLength(5)]
         public bool IsActive { get; set; }
     }
 }
