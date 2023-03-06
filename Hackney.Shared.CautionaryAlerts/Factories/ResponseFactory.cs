@@ -81,7 +81,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Reason = domain.Reason,
                 AssureReference = domain.AssureReference,
                 PersonId = ParseGuidIfExists(domain.PersonId),
-                PersonName = domain.Name
+                PersonName = domain.Name,
+                IsActive= domain.IsActive
             };
         }
 
