@@ -2,6 +2,7 @@ using Hackney.Shared.CautionaryAlerts.Boundary.Request;
 using Hackney.Shared.CautionaryAlerts.Domain;
 using Hackney.Shared.CautionaryAlerts.Infrastructure;
 using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 EndDate = alert.EndDate,
                 StartDate = alert.StartDate,
                 ModifiedBy = alert.ModifiedBy
+
             };
         }
 
@@ -75,7 +77,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Name = entity.PersonName,
                 Reason = entity.Reason,
                 AssureReference = entity.AssureReference,
-                PersonId = entity.MMHID, 
+                PersonId = entity.MMHID,
                 AlertId = entity.AlertId
             };
         }
@@ -131,6 +133,21 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 CautionOnSystem = entity.Alert.Description,
                 DateOfIncident = entity.IncidentDate.ToString("d", CultureInfo.InvariantCulture),
                 Reason = entity.IncidentDescription
+            };
+        }
+
+        public static CautionaryAlert ToCautionaryAlertDomain(this PropertyAlertNew entity)
+        {
+            return new CautionaryAlert()
+            {
+                AlertId = Guid.Parse(entity.AlertId),
+                AlertCode = entity.Code,
+                AssureReference = entity.AssureReference,
+                Description = entity.Reason,
+                IsActive = entity.IsActive,
+                PersonId = Guid.Parse(entity.MMHID),
+                PersonName = entity.PersonName,
+                StartDate = DateTime.Parse(entity.DateOfIncident)
             };
         }
 

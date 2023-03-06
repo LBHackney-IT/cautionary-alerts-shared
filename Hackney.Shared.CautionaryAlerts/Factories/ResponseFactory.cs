@@ -15,7 +15,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             {
                 Description = domain.Description,
                 AlertCode = domain.AlertCode,
-                DateModified = domain.DateModified.ToString("yyyy-MM-dd"),
+                DateModified = domain.DateModified?.ToString("yyyy-MM-dd"),
                 EndDate = domain.EndDate?.ToString("yyyy-MM-dd"),
                 ModifiedBy = domain.ModifiedBy,
                 StartDate = domain.StartDate?.ToString("yyyy-MM-dd"),
