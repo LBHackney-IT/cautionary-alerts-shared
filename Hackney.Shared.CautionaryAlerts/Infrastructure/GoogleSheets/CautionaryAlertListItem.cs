@@ -23,5 +23,6 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets
         public string Reason { get; set; }
         public string AssureReference { get; set; }
         public string PersonId { get; set; }
+        public string AlertId { get; set; }
     }
 }
