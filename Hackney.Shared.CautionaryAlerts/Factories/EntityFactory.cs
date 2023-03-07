@@ -3,7 +3,6 @@ using Hackney.Shared.CautionaryAlerts.Boundary.Request;
 using Hackney.Shared.CautionaryAlerts.Domain;
 using Hackney.Shared.CautionaryAlerts.Infrastructure;
 using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -121,7 +120,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             };
         }
 
-        public static PropertyAlertNew ToDatabase(this CreateCautionaryAlert entity, string AlertId, bool IsActive)
+        public static PropertyAlertNew ToDatabase(this CreateCautionaryAlert entity, bool isActive, string alertId)
         {
             return new PropertyAlertNew()
             {
@@ -135,8 +134,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 CautionOnSystem = entity.Alert.Description,
                 DateOfIncident = entity.IncidentDate.ToString("d", CultureInfo.InvariantCulture),
                 Reason = entity.IncidentDescription,
-                IsActive = IsActive,
-                AlertId = AlertId,
+                IsActive = isActive,
+                AlertId = alertId,
             };
         }
 
