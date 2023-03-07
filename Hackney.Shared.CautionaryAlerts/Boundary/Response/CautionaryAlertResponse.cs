@@ -43,5 +43,9 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Response
         public string AssureReference { get; set; }
         public string PersonName { get; set; }
         public Guid? PersonId { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public Guid AlertId { get; set; }
     }
 }

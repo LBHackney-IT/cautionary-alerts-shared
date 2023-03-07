@@ -4,7 +4,7 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
 {
     public class CautionaryAlert
     {
-        public DateTime DateModified { get; set; }
+        public DateTime? DateModified { get; set; }
 
         public string ModifiedBy { get; set; }
 
@@ -18,5 +18,7 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
         public string AssureReference { get; set; }
         public string PersonName { get; set; }
         public Guid PersonId { get; set; }
+        public bool IsActive { get; set; }
+        public Guid AlertId { get; set; }
     }
 }

@@ -15,13 +15,15 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             {
                 Description = domain.Description,
                 AlertCode = domain.AlertCode,
-                DateModified = domain.DateModified.ToString("yyyy-MM-dd"),
+                DateModified = domain.DateModified?.ToString("yyyy-MM-dd"),
                 EndDate = domain.EndDate?.ToString("yyyy-MM-dd"),
                 ModifiedBy = domain.ModifiedBy,
                 StartDate = domain.StartDate?.ToString("yyyy-MM-dd"),
                 AssureReference = domain.AssureReference,
                 PersonName = domain.PersonName,
-                PersonId = domain.PersonId
+                PersonId = domain.PersonId,
+                IsActive = domain.IsActive,
+                AlertId = domain.AlertId
             };
         }
 
@@ -79,7 +81,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Reason = domain.Reason,
                 AssureReference = domain.AssureReference,
                 PersonId = ParseGuidIfExists(domain.PersonId),
-                PersonName = domain.Name
+                PersonName = domain.Name,
+                IsActive = domain.IsActive
             };
         }
 
