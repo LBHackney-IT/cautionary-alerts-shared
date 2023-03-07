@@ -120,7 +120,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             };
         }
 
-        public static PropertyAlertNew ToDatabase(this CreateCautionaryAlert entity, string AlertId, bool IsActive)
+        public static PropertyAlertNew ToDatabase(this CreateCautionaryAlert entity, bool isActive, string alertId)
         {
             return new PropertyAlertNew()
             {
@@ -134,8 +134,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 CautionOnSystem = entity.Alert.Description,
                 DateOfIncident = entity.IncidentDate.ToString("d", CultureInfo.InvariantCulture),
                 Reason = entity.IncidentDescription,
-                IsActive = IsActive,
-                AlertId = AlertId,
+                IsActive = isActive,
+                AlertId = alertId,
             };
         }
 
