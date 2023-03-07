@@ -5,6 +5,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System.Linq;
 using System;
+using Hackney.Shared.CautionaryAlerts.Boundary.Request;
 using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
 
 namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
@@ -76,6 +77,33 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
 
             // Assert
             task.Should().NotThrow<IndexOutOfRangeException>();
+        }
+
+        [Test]
+        public void CanCreatePropertyAlertNewFromCreateCautionaryAlert()
+        {
+            // Arrange
+            var alertId = _fixture.Create<string>();
+            var isActive = _fixture.Create<bool>();
+            var entity = _fixture.Create<CreateCautionaryAlert>();
+            entity.IncidentDate = new DateTime(2020, 1, 1);
+
+            // Act
+            var response = entity.ToDatabase(isActive, alertId);
+
+            // Assert
+            response.AssureReference.Should().Be(entity.AssureReference);
+            response.Address.Should().Be(entity.AssetDetails?.FullAddress);
+            response.UPRN.Should().Be(entity.AssetDetails?.UPRN);
+            response.PropertyReference.Should().Be(entity.AssetDetails?.PropertyReference);
+            response.MMHID.Should().Be(entity.PersonDetails.Id.ToString());
+            response.PersonName.Should().Be(entity.PersonDetails.Name);
+            response.Code.Should().Be(entity.Alert.Code);
+            response.CautionOnSystem.Should().Be(entity.Alert.Description);
+            response.DateOfIncident.Should().Be("01/01/2020");
+            response.Reason.Should().Be(entity.IncidentDescription);
+            response.AlertId.Should().Be(alertId);
+            response.IsActive.Should().Be(isActive);
         }
     }
 }
