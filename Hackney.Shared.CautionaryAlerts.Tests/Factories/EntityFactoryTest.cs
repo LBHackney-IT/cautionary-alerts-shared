@@ -78,6 +78,34 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             // Assert
             task.Should().NotThrow<IndexOutOfRangeException>();
         }
+        
+        [Test]
+        public void CanCreateAPropertyAlertDomainObjectFromPropertyAlertNew()
+        {
+            // Arrange
+            var alertId = _fixture.Create<string>();
+            var propertyAlertNew = _fixture.Create<PropertyAlertNew>();
+            propertyAlertNew.AlertId = alertId;
+            
+            // Act
+            var response = propertyAlertNew.ToDomain();
+            
+            // Assert
+            response.DoorNumber.Should().Be(propertyAlertNew.DoorNumber);
+            response.Address.Should().Be(propertyAlertNew.Address);
+            response.Neighbourhood.Should().Be(propertyAlertNew.Neighbourhood);
+            response.DateOfIncident.Should().Be(propertyAlertNew.DateOfIncident);
+            response.Code.Should().Be(propertyAlertNew.Code);
+            response.CautionOnSystem.Should().Be(propertyAlertNew.CautionOnSystem);
+            response.PropertyReference.Should().Be(propertyAlertNew.PropertyReference);
+            response.Name.Should().Be(propertyAlertNew.PersonName);
+            response.Reason.Should().Be(propertyAlertNew.Reason);
+            response.AssureReference.Should().Be(propertyAlertNew.AssureReference);
+            response.PersonId.Should().Be(propertyAlertNew.MMHID);
+            response.AlertId.Should().Be(propertyAlertNew.AlertId);
+            response.IsActive.Should().Be(propertyAlertNew.IsActive);
+        }
+        
 
         [Test]
         public void CanCreateAPropertyAlertDomainObjectFromPropertyAlertNew()
