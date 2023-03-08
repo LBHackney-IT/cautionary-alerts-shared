@@ -65,7 +65,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Boundary.Validation
         }
 
         [Test]
-        public void AlertIdShouldFailIfEmpoty()
+        public void AlertIdShouldFailIfEmpty()
         {
             var defaultString = string.Join("", _fixture.CreateMany<char>(CautionaryAlertConstants.INCIDENTDESCRIPTIONLENGTH));
             var addressString = string.Join("", _fixture.CreateMany<char>(CautionaryAlertConstants.FULLADDRESSLENGTH));
