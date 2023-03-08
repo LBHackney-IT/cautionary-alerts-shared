@@ -114,20 +114,5 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Neighbourhood = domain.Neighbourhood
             };
         }
-
-        public static CautionaryAlertResponse CautionaryAlertToResponse(this PropertyAlertDomain domain)
-        {
-            return new CautionaryAlertResponse()
-            {
-                AlertId = Guid.Parse(domain.AlertId),
-                IsActive = domain.IsActive,
-                AlertCode = domain.Code,
-                AssureReference = domain.AssureReference,
-                PersonId = Guid.Parse(domain.MMHID),
-                StartDate = domain.DateOfIncident,
-                PersonName = domain.PersonName,
-                Reason = domain.Reason
-            };
-        }
     }
 }
