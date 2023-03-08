@@ -15,7 +15,7 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
             RuleFor(x => x.Name).NotNull()
                 .NotEmpty()
                 .NotXssString()
-                .Must(x => x.Length <= CreateCautionaryAlertConstants.PERSONNAMELENGTH);
+                .Must(x => x.Length <= CautionaryAlertConstants.PERSONNAMELENGTH);
         }
     }
 }
