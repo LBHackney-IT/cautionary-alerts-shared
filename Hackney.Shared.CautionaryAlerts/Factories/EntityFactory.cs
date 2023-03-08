@@ -101,9 +101,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 AlertId = entity.AlertId,
                 IsActive = entity.IsActive,
                 MMHID = entity.MMHID,
-                UPRN = entity.UPRN,
-                IsActive = entity.IsActive,
-                AlertId = entity.AlertId
+                UPRN = entity.UPRN
             };
         }
 
