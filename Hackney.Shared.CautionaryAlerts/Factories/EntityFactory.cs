@@ -141,6 +141,25 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             };
         }
 
+        public static PropertyAlertNew ToDatabase(this EndCautionaryAlert entity)
+        {
+            return new PropertyAlertNew()
+            {
+                AssureReference = entity.AssureReference,
+                Address = entity.AssetDetails?.FullAddress,
+                UPRN = entity.AssetDetails?.UPRN,
+                PropertyReference = entity.AssetDetails?.PropertyReference,
+                MMHID = entity.PersonDetails.Id.ToString(),
+                PersonName = entity.PersonDetails.Name,
+                Code = entity.Alert.Code,
+                CautionOnSystem = entity.Alert.Description,
+                DateOfIncident = entity.IncidentDate.ToString("d", CultureInfo.InvariantCulture),
+                Reason = entity.IncidentDescription,
+                IsActive = entity.IsActive,
+                AlertId = entity.AlertId.ToString()
+            };
+        }
+
         public static CautionaryAlert ToCautionaryAlertDomain(this PropertyAlertNew entity)
         {
             return new CautionaryAlert()

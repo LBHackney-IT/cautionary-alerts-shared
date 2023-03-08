@@ -1,6 +1,6 @@
 namespace Hackney.Shared.CautionaryAlerts.Infrastructure
 {
-    public static class CreateCautionaryAlertConstants
+    public static class CautionaryAlertConstants
     {
         public const int ALERTCODELENGTH = 5;
         public const int ALERTDESCRIPTION = 50;

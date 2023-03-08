@@ -8,9 +8,9 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
         public AlertValidator()
         {
             RuleFor(x => x.Code).NotNull().NotEmpty()
-                .Must(x => x.Length <= CreateCautionaryAlertConstants.ALERTCODELENGTH);
+                .Must(x => x.Length <= CautionaryAlertConstants.ALERTCODELENGTH);
             RuleFor(x => x.Code).NotNull().NotEmpty()
-                .Must(x => x.Length <= CreateCautionaryAlertConstants.ALERTDESCRIPTION);
+                .Must(x => x.Length <= CautionaryAlertConstants.ALERTDESCRIPTION);
         }
     }
 }

@@ -11,15 +11,15 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
         {
             RuleFor(x => x.FullAddress)
                 .NotXssString()
-                .Must(x => x.Length <= CreateCautionaryAlertConstants.FULLADDRESSLENGTH);
+                .Must(x => x.Length <= CautionaryAlertConstants.FULLADDRESSLENGTH);
 
             RuleFor(x => x.PropertyReference)
                 .NotXssString()
-                .Must(x => x.Length <= CreateCautionaryAlertConstants.PROPERTYREFERENCELENGTH);
+                .Must(x => x.Length <= CautionaryAlertConstants.PROPERTYREFERENCELENGTH);
 
             RuleFor(x => x.UPRN)
                 .NotXssString()
-                .Must(x => x.Length <= CreateCautionaryAlertConstants.UPRNLENGTH);
+                .Must(x => x.Length <= CautionaryAlertConstants.UPRNLENGTH);
         }
     }
 }

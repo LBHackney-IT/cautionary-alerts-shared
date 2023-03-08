@@ -1,13 +1,15 @@
-using Hackney.Shared.CautionaryAlerts.Infrastructure;
-using FluentValidation;
+﻿using FluentValidation;
 using Hackney.Core.Validation;
+using Hackney.Shared.CautionaryAlerts.Infrastructure;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
 {
-    public class CreateCautionaryAlertValidator : AbstractValidator<CreateCautionaryAlert>
+    public class EndCautionaryAlertValidator : AbstractValidator<EndCautionaryAlert>
     {
-        public CreateCautionaryAlertValidator()
+        public EndCautionaryAlertValidator()
         {
             RuleFor(x => x.IncidentDescription)
                 .NotEmpty().NotNull()
@@ -29,6 +31,10 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
             RuleFor(x => x.AssetDetails).SetValidator(new AssetDetailsValidator());
 
             RuleFor(x => x.PersonDetails).SetValidator(new PersonDetailsValidator());
+
+            RuleFor(x => x.AlertId).NotEmpty().NotNull();
+
+            RuleFor(x => x.IsActive).Must(x => x.Equals(false));
         }
     }
 }
