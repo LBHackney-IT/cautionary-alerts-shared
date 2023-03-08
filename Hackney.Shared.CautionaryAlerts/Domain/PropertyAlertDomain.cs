@@ -3,6 +3,7 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
     public class PropertyAlertDomain
     {
         public int Id { get; set; }
+        public string AlertId { get; set; }
         public string DoorNumber { get; set; }
         public string Address { get; set; }
         public string Neighbourhood { get; set; }
@@ -15,5 +16,6 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
         public string MMHID { get; set; }
         public string Reason { get; set; }
         public string AssureReference { get; set; }
+        public bool IsActive { get; set; }
     }
 }
