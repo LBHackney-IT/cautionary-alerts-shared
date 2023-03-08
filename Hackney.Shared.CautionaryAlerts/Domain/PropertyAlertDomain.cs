@@ -16,7 +16,6 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
         public string MMHID { get; set; }
         public string Reason { get; set; }
         public string AssureReference { get; set; }
-        public string AlertId { get; set; }
         public bool IsActive { get; set; }
     }
 }
