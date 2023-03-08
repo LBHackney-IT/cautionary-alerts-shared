@@ -1,8 +1,8 @@
+using System;
 using Hackney.Shared.CautionaryAlerts.Boundary.Request;
 using Hackney.Shared.CautionaryAlerts.Domain;
 using Hackney.Shared.CautionaryAlerts.Infrastructure;
 using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -98,6 +98,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Reason = entity.Reason,
                 AssureReference = entity.AssureReference,
                 Id = entity.Id,
+                AlertId = entity.AlertId,
+                IsActive = entity.IsActive,
                 MMHID = entity.MMHID,
                 UPRN = entity.UPRN, 
                 IsActive = entity.IsActive,
@@ -122,7 +124,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             };
         }
 
-        public static PropertyAlertNew ToDatabase(this CreateCautionaryAlert entity)
+        public static PropertyAlertNew ToDatabase(this CreateCautionaryAlert entity, bool isActive, string alertId)
         {
             return new PropertyAlertNew()
             {
@@ -135,7 +137,9 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Code = entity.Alert.Code,
                 CautionOnSystem = entity.Alert.Description,
                 DateOfIncident = entity.IncidentDate.ToString("d", CultureInfo.InvariantCulture),
-                Reason = entity.IncidentDescription
+                Reason = entity.IncidentDescription,
+                IsActive = isActive,
+                AlertId = alertId,
             };
         }
 

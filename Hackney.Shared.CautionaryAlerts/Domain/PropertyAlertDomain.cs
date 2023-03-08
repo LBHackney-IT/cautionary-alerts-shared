@@ -3,6 +3,7 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
     public class PropertyAlertDomain
     {
         public int Id { get; set; }
+        public string AlertId { get; set; }
         public string DoorNumber { get; set; }
         public string Address { get; set; }
         public string Neighbourhood { get; set; }
