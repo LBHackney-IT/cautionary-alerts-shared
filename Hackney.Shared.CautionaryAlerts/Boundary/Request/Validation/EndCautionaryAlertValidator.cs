@@ -34,7 +34,7 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
 
             RuleFor(x => x.AlertId).NotEmpty().NotNull();
 
-            RuleFor(x=> x.IsActive).Must(x=> x.Equals(false));
+            RuleFor(x => x.IsActive).Must(x => x.Equals(false));
         }
     }
 }

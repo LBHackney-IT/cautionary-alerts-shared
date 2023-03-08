@@ -99,7 +99,7 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 AssureReference = entity.AssureReference,
                 Id = entity.Id,
                 MMHID = entity.MMHID,
-                UPRN = entity.UPRN, 
+                UPRN = entity.UPRN,
                 IsActive = entity.IsActive,
                 AlertId = entity.AlertId
             };

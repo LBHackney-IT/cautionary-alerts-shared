@@ -16,7 +16,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Boundary.Validation
 
         public EndCautionaryAlertValidatorTests()
         {
-            _classUnderTest= new EndCautionaryAlertValidator();
+            _classUnderTest = new EndCautionaryAlertValidator();
         }
 
         public const int INVALIDLENGTH = 2;
@@ -125,7 +125,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Boundary.Validation
                                         .With(x => x.IncidentDate, _fixture.Create<DateTime>().AddDays(-1))
                                         .With(x => x.AssureReference, defaultString[..CautionaryAlertConstants.ASSUREREFERENCELENGTH])
                                         .With(x => x.AlertId, Guid.NewGuid())
-                                        .With(x=> x.IsActive, true)
+                                        .With(x => x.IsActive, true)
                                         .Create();
 
             var result = _classUnderTest.TestValidate(cautionaryAlert);
