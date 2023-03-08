@@ -98,6 +98,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 Reason = entity.Reason,
                 AssureReference = entity.AssureReference,
                 Id = entity.Id,
+                AlertId = entity.AlertId,
+                IsActive = entity.IsActive,
                 MMHID = entity.MMHID,
                 UPRN = entity.UPRN
             };
