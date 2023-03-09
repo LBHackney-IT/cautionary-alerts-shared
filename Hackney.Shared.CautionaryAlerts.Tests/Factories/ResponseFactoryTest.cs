@@ -109,6 +109,31 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
 
         }
 
+        [Test]
+        public void CanMapAPropertyAlertDomainObjectToACautionaryListItemResponse()
+        {
+            // Arrange
+            var fixture = new Fixture();
+            var propertyAlertDomain = fixture.Create<PropertyAlertDomain>();
+
+            // Act
+            var response = propertyAlertDomain.ToResponse();
+            
+            // Assert
+            response.AlertId.Should().Be(propertyAlertDomain.AlertId);
+            response.IsActive.Should().Be(propertyAlertDomain.IsActive);
+            response.DoorNumber.Should().Be(propertyAlertDomain.DoorNumber);
+            response.Address.Should().Be(propertyAlertDomain.Address);
+            response.AssureReference.Should().Be(propertyAlertDomain.AssureReference);
+            response.Code.Should().Be(propertyAlertDomain.Code);
+            response.DateOfIncident.Should().Be(propertyAlertDomain.DateOfIncident);
+            response.CautionOnSystem.Should().Be(propertyAlertDomain.CautionOnSystem);
+            response.Name.Should().Be(propertyAlertDomain.PersonName);
+            response.PropertyReference.Should().Be(propertyAlertDomain.PropertyReference);
+            response.Reason.Should().Be(propertyAlertDomain.Reason);
+            response.Neighbourhood.Should().Be(propertyAlertDomain.Neighbourhood);
+        }
+
 
     }
 }

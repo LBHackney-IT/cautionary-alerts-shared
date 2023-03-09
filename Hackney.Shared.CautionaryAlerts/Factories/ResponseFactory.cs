@@ -102,6 +102,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
         {
             return new CautionaryAlertListItem()
             {
+                AlertId = domain.AlertId,
+                IsActive = domain.IsActive,
                 DoorNumber = domain.DoorNumber,
                 Address = domain.Address,
                 AssureReference = domain.AssureReference,
