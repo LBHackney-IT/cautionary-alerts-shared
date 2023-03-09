@@ -118,7 +118,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
 
             // Act
             var response = propertyAlertDomain.ToResponse();
-            
+
             // Assert
             response.AlertId.Should().Be(propertyAlertDomain.AlertId);
             response.IsActive.Should().Be(propertyAlertDomain.IsActive);
