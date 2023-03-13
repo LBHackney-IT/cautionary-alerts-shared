@@ -175,6 +175,21 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             };
         }
 
+        public static PropertyAlertNew ToPropertyAlertDatabase(this CautionaryAlert entity, int id)
+        {
+            return new PropertyAlertNew()
+            {
+                AlertId = entity.AlertId.ToString(),
+                Code = entity.AlertCode,
+                AssureReference = entity.AssureReference,
+                Reason = entity.Description,
+                IsActive = entity.IsActive,
+                MMHID = entity.PersonId.ToString(),
+                PersonName = entity.PersonName,
+                DateOfIncident = entity.StartDate.ToString()
+            };
+        }
+
         private static string ReadColumn(string[] rowArray, int index)
         {
             // prevent IndexOutOfRangeException
