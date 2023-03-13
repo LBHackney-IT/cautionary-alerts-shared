@@ -175,18 +175,25 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
             };
         }
 
-        public static PropertyAlertNew ToPropertyAlertDatabase(this CautionaryAlert entity, int id)
+        public static PropertyAlertNew ToPropertyAlertDatabase(this PropertyAlertDomain domain)
         {
             return new PropertyAlertNew()
             {
-                AlertId = entity.AlertId.ToString(),
-                Code = entity.AlertCode,
-                AssureReference = entity.AssureReference,
-                Reason = entity.Description,
-                IsActive = entity.IsActive,
-                MMHID = entity.PersonId.ToString(),
-                PersonName = entity.PersonName,
-                DateOfIncident = entity.StartDate.ToString()
+                DoorNumber = domain.DoorNumber,
+                Address = domain.Address,
+                Neighbourhood = domain.Neighbourhood,
+                DateOfIncident = domain.DateOfIncident,
+                Code = domain.Code,
+                CautionOnSystem = domain.CautionOnSystem,
+                PropertyReference = domain.PropertyReference,
+                PersonName = domain.PersonName,
+                Reason = domain.Reason,
+                AssureReference = domain.AssureReference,
+                Id = domain.Id,
+                AlertId = domain.AlertId,
+                IsActive = domain.IsActive,
+                MMHID = domain.MMHID,
+                UPRN = domain.UPRN
             };
         }
 
