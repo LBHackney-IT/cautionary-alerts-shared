@@ -11,7 +11,6 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request.Validation
         public AlertQueryValidator()
         {
             RuleFor(x => x.AlertId).NotNull().NotEmpty();
-            RuleFor(x => x.PersonId).NotNull().NotEmpty();
         }
     }
 }

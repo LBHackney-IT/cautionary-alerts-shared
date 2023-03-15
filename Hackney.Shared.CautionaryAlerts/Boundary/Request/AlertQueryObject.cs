@@ -8,9 +8,6 @@ namespace Hackney.Shared.CautionaryAlerts.Boundary.Request
 {
     public class AlertQueryObject
     {
-        [FromRoute(Name = "personId")]
-        public Guid PersonId { get; set; }
-
         [FromRoute(Name = "alertId")]
         public Guid AlertId { get; set; }
     }
