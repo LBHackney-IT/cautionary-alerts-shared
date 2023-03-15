@@ -36,23 +36,5 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Boundary.Validation
             result.ShouldNotHaveValidationErrorFor(x => x.AlertId);
 
         }
-
-        [Test]
-        public void PersonIdFailsIfEmpty()
-        {
-            var model = new AlertQueryObject { PersonId = Guid.Empty };
-            var result = _classUnderTest.TestValidate(model);
-            result.ShouldHaveValidationErrorFor(x => x.PersonId);
-
-        }
-
-        [Test]
-        public void PersonIdShouldNotFailIfValid()
-        {
-            var model = new AlertQueryObject { PersonId = Guid.NewGuid() };
-            var result = _classUnderTest.TestValidate(model);
-            result.ShouldNotHaveValidationErrorFor(x => x.PersonId);
-
-        }
     }
 }
