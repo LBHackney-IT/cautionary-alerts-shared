@@ -7,6 +7,7 @@ using System.Linq;
 using System;
 using Hackney.Shared.CautionaryAlerts.Boundary.Request;
 using Hackney.Shared.CautionaryAlerts.Infrastructure.GoogleSheets;
+using Hackney.Shared.CautionaryAlerts.Domain;
 
 namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
 {
@@ -131,6 +132,62 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.Reason.Should().Be(entity.IncidentDescription);
             response.AlertId.Should().Be(alertId);
             response.IsActive.Should().Be(isActive);
+        }
+
+        [Test]
+        public void CanMapPropertyAlertDomainFromPropertyAlertNew()
+        {
+            // Arrange
+            var alertId = _fixture.Create<string>();
+            var propertyAlertNew = _fixture.Create<PropertyAlertNew>();
+            propertyAlertNew.AlertId = alertId;
+
+            // Act
+            var response = propertyAlertNew.ToPropertyAlertDomain();
+
+            // Assert
+            response.DoorNumber.Should().Be(propertyAlertNew.DoorNumber);
+            response.Address.Should().Be(propertyAlertNew.Address);
+            response.Neighbourhood.Should().Be(propertyAlertNew.Neighbourhood);
+            response.DateOfIncident.Should().Be(propertyAlertNew.DateOfIncident);
+            response.Code.Should().Be(propertyAlertNew.Code);
+            response.CautionOnSystem.Should().Be(propertyAlertNew.CautionOnSystem);
+            response.PropertyReference.Should().Be(propertyAlertNew.PropertyReference);
+            response.PersonName.Should().Be(propertyAlertNew.PersonName);
+            response.Reason.Should().Be(propertyAlertNew.Reason);
+            response.AssureReference.Should().Be(propertyAlertNew.AssureReference);
+            response.MMHID.Should().Be(propertyAlertNew.MMHID);
+            response.AlertId.Should().Be(propertyAlertNew.AlertId);
+            response.IsActive.Should().Be(propertyAlertNew.IsActive);
+            response.EndDate.Should().Be(propertyAlertNew.EndDate);
+        }
+
+        [Test]
+        public void CanMapPropertyAlertNewFromPropertyAlertDomain()
+        {
+            // Arrange
+            var alertId = _fixture.Create<string>();
+            var propertyAlertNew = _fixture.Create<PropertyAlertDomain>();
+            propertyAlertNew.AlertId = alertId;
+
+            // Act
+            var response = propertyAlertNew.ToPropertyAlertDatabase();
+
+            // Assert
+            response.DoorNumber.Should().Be(propertyAlertNew.DoorNumber);
+            response.Address.Should().Be(propertyAlertNew.Address);
+            response.Neighbourhood.Should().Be(propertyAlertNew.Neighbourhood);
+            response.DateOfIncident.Should().Be(propertyAlertNew.DateOfIncident);
+            response.Code.Should().Be(propertyAlertNew.Code);
+            response.CautionOnSystem.Should().Be(propertyAlertNew.CautionOnSystem);
+            response.PropertyReference.Should().Be(propertyAlertNew.PropertyReference);
+            response.PersonName.Should().Be(propertyAlertNew.PersonName);
+            response.Reason.Should().Be(propertyAlertNew.Reason);
+            response.AssureReference.Should().Be(propertyAlertNew.AssureReference);
+            response.MMHID.Should().Be(propertyAlertNew.MMHID);
+            response.AlertId.Should().Be(propertyAlertNew.AlertId);
+            response.IsActive.Should().Be(propertyAlertNew.IsActive);
+            response.EndDate.Should().Be(propertyAlertNew.EndDate);
         }
     }
 }
