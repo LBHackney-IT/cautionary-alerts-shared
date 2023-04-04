@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -64,5 +65,8 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         [Column("alert_id")]
         [MaxLength(36)]
         public string AlertId { get; set; }
+
+        [Column("end_date")]
+        public DateTime? EndDate { get; set; }
     }
 }

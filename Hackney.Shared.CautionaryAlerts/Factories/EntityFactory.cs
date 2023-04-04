@@ -101,7 +101,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 AlertId = entity.AlertId,
                 IsActive = entity.IsActive,
                 MMHID = entity.MMHID,
-                UPRN = entity.UPRN
+                UPRN = entity.UPRN,
+                EndDate = entity.EndDate
             };
         }
 
@@ -174,8 +175,8 @@ namespace Hackney.Shared.CautionaryAlerts.Factories
                 AlertId = domain.AlertId,
                 IsActive = domain.IsActive,
                 MMHID = domain.MMHID,
-                UPRN = domain.UPRN
-
+                UPRN = domain.UPRN,
+                EndDate = domain.EndDate
             };
         }
 

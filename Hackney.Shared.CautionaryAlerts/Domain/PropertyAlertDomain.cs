@@ -1,3 +1,5 @@
+using System;
+
 namespace Hackney.Shared.CautionaryAlerts.Domain
 {
     public class PropertyAlertDomain
@@ -17,5 +19,6 @@ namespace Hackney.Shared.CautionaryAlerts.Domain
         public string Reason { get; set; }
         public string AssureReference { get; set; }
         public bool IsActive { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }
