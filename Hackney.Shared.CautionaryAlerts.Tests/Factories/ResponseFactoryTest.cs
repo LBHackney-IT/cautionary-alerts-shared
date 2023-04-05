@@ -140,8 +140,8 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             // Arrange
             var fixture = new Fixture();
             var cautionaryAlertListItem = fixture.Build<CautionaryAlertListItem>()
-                                                 .With(x=> x.PersonId, Guid.NewGuid().ToString())
-                                                 .With(x=> x.AlertId, Guid.NewGuid().ToString())
+                                                 .With(x => x.PersonId, Guid.NewGuid().ToString())
+                                                 .With(x => x.AlertId, Guid.NewGuid().ToString())
                                                  .Create();
 
             // Act
