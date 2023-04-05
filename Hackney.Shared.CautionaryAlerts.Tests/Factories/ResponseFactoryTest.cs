@@ -63,6 +63,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
         {
             var fixture = new Fixture();
             var domain = fixture.Build<CautionaryAlertListItem>()
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Without(x => x.PersonId)
                                 .Create();
             var response = domain.ToResponse();
@@ -77,6 +78,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var personId = Guid.NewGuid();
             var domain = fixture.Build<CautionaryAlertListItem>()
                                 .With(x => x.PersonId, personId.ToString())
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().Be(personId);
@@ -90,6 +92,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var personId = Guid.Empty;
             var domain = fixture.Build<CautionaryAlertListItem>()
                                 .With(x => x.PersonId, personId.ToString())
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().BeNull();
@@ -103,6 +106,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var personId = "test";
             var domain = fixture.Build<CautionaryAlertListItem>()
                                 .With(x => x.PersonId, personId)
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().BeNull();
