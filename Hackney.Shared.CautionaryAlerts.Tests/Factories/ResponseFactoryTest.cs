@@ -63,6 +63,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
         {
             var fixture = new Fixture();
             var domain = fixture.Build<CautionaryAlertListItem>()
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Without(x => x.PersonId)
                                 .Create();
             var response = domain.ToResponse();
@@ -77,6 +78,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var personId = Guid.NewGuid();
             var domain = fixture.Build<CautionaryAlertListItem>()
                                 .With(x => x.PersonId, personId.ToString())
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().Be(personId);
@@ -90,6 +92,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var personId = Guid.Empty;
             var domain = fixture.Build<CautionaryAlertListItem>()
                                 .With(x => x.PersonId, personId.ToString())
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().BeNull();
@@ -103,6 +106,7 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             var personId = "test";
             var domain = fixture.Build<CautionaryAlertListItem>()
                                 .With(x => x.PersonId, personId)
+                                .With(x => x.AlertId, Guid.NewGuid().ToString())
                                 .Create();
             var response = domain.ToResponse();
             response.PersonId.Should().BeNull();
@@ -132,6 +136,32 @@ namespace Hackney.Shared.CautionaryAlerts.Tests.Factories
             response.PropertyReference.Should().Be(propertyAlertDomain.PropertyReference);
             response.Reason.Should().Be(propertyAlertDomain.Reason);
             response.Neighbourhood.Should().Be(propertyAlertDomain.Neighbourhood);
+        }
+
+        [Test]
+        public void CanMapACautionaryListItemToACautionaryAlertResponse()
+        {
+            // Arrange
+            var fixture = new Fixture();
+            var cautionaryAlertListItem = fixture.Build<CautionaryAlertListItem>()
+                                                 .With(x => x.PersonId, Guid.NewGuid().ToString())
+                                                 .With(x => x.AlertId, Guid.NewGuid().ToString())
+                                                 .Create();
+
+            // Act
+            var response = cautionaryAlertListItem.ToResponse();
+
+            // Assert
+            response.AlertId.Should().Be(cautionaryAlertListItem.AlertId);
+            response.IsActive.Should().Be(cautionaryAlertListItem.IsActive);
+            response.AlertCode.Should().Be(cautionaryAlertListItem.Code);
+            response.AssureReference.Should().Be(cautionaryAlertListItem.AssureReference);
+            response.DateModified.Should().Be(cautionaryAlertListItem.DateOfIncident);
+            response.Description.Should().Be(cautionaryAlertListItem.CautionOnSystem);
+            response.PersonId.Should().Be(cautionaryAlertListItem.PersonId);
+            response.PersonName.Should().Be(cautionaryAlertListItem.Name);
+            response.Reason.Should().Be(cautionaryAlertListItem.Reason);
+            response.StartDate.Should().Be(cautionaryAlertListItem.DateOfIncident);
         }
 
 
