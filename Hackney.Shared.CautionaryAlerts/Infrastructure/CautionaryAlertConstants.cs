@@ -2,7 +2,7 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
 {
     public static class CautionaryAlertConstants
     {
-        public const int ALERTCODELENGTH = 5;
+        public const int ALERTCODELENGTH = 10;
         public const int ALERTDESCRIPTION = 50;
         public const int FULLADDRESSLENGTH = 255;
         public const int PROPERTYREFERENCELENGTH = 12;
