@@ -28,7 +28,7 @@ namespace Hackney.Shared.CautionaryAlerts.Infrastructure
         public string DateOfIncident { get; set; }
 
         [Column("code")]
-        [MaxLength(5)]
+        [MaxLength(10)]
         public string Code { get; set; }
 
         [Column("caution_on_system")]
